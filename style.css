@@ -1,8 +1,9 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
 #canvas1 {
     position: absolute;
     top: 50%;
@@ -11,7 +12,86 @@
     border: 5px solid black;
     max-width: 100%;
     max-height: 100%;
+    filter: brightness(1.1);
+
 }
-#player, #layer1, #layer2,#layer3,#layer4,#layer5, #enemy_fly, #enemy_soldier {
+
+.container_index {
+    background-image: url(./Assets/fondo.png);
+    background-size: cover;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 5px solid black;
+    width: 900px;
+    height: 500px;
+}
+
+.container_instruction {
+    background-image: url(./Assets/fondo.png);
+    background-size: cover;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 5px solid black;
+    width: 900px;
+    height: 500px;
+}
+
+.btn_play {
+    margin-top: 390px;
+    margin-left: 550px;
+    width: 120px;
+    height: 60px;
+    top: 500px;
+    background-color: #ffca1b;
+    font-size: 25px;
+    font-family: monospace;
+    border-radius: 5px;
+}
+
+.btn_instruction {
+    width: 200px;
+    height: 60px;
+    top: 0px;
+    background-color: #00bbf9;
+    font-size: 25px;
+    font-family: monospace;
+    border-radius: 5px;
+}
+
+.btn_back {
+    width: 200px;
+    height: 60px;
+    top: 0px;
+    background-color: #ba01ff;
+    font-size: 20px;
+    font-family: monospace;
+    border-radius: 5px;
+}
+
+.swal2-title {
+    font-family: monospace;
+    font-size: 20px !important;
+    color: black !important;
+}
+
+body.swal2-shown>[aria-hidden="true"] {
+    transition: 0.1s filter;
+    filter: blur(10px);
+}
+
+#player,
+#layer1,
+#layer2,
+#layer3,
+#layer4,
+#layer5,
+#enemy_fly,
+#enemy_soldier,
+#fire,
+#lives {
     display: none;
 }

@@ -38,14 +38,16 @@ window.addEventListener("load", function () {
             this.enemyInterval = 3000;
             this.debug = true;
             this.score = 0;
+            this.winningScore = 8;
             this.fontColor = "black";
             this.time = 0;
-            this.maxTime = 80000;
+            this.maxTime = 30000;
             this.gameOver = false;
+            this.lives = 5;
             this.player.currentState = this.player.states[0];
             this.player.currentState.enter();
-
         }
+
         update(deltaTime) {
             this.time += deltaTime;
             if (this.time > this.maxTime) this.gameOver = true;

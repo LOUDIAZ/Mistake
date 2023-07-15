@@ -53,7 +53,6 @@ export class Player {
     }
     draw(context) {
         context.drawImage(this.image, this.frameX * this.width, this.frameY * this.height, this.width, this.height, this.x, this.y, this.width, this.height);
-
     }
 
     onGround() {
@@ -69,9 +68,9 @@ export class Player {
     checkCollision(){
         this.game.enemies.forEach(enemy => {
             if (
-                enemy.x < this.x + this.width &&
+                enemy.x < this.x + this.width -40 &&
                 enemy.x + enemy.width > this.x &&
-                enemy.y < this.y + this.height &&
+                enemy.y < this.y + this.height -20 &&
                 enemy.y + enemy.height > this.y 
             ){
                 enemy.markedForDeletion = true;
@@ -79,10 +78,10 @@ export class Player {
                     this.game.score++;
                 }   else {
                     this.setState(5, 0);
+                    this.game.lives--;
+                    if (this.game.lives <= 0) this.game.gameOver= true;
                 }   
             }
         });
     }
-
-
 }

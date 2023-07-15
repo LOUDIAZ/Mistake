@@ -56,8 +56,8 @@ export class GroundEnemy extends Enemy {
     constructor(game){
         super();
         this.game = game;
-        this.width = 59.125;
-        this.height = 70;
+        this.width = 63.375;
+        this.height = 75;
         this.x = this.game.width + Math.random() * this.game.width * 0.5;;
         this.y = this.game.height - this.height - this.game.groundMargin;
         this.image = document.getElementById("enemy_soldier");
