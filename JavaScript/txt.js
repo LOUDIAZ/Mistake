@@ -2,7 +2,7 @@ export class Texto {
     constructor(game) {
         this.game = game;
         this.fontSize = 20;
-        this.fontFamily = "monospace";
+        this.fontFamily = "Calibri";
         this.livesImage = document.getElementById("lives");
 
     }
