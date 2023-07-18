@@ -10,8 +10,8 @@ class Layer {
     }
     
     update(){
-        if (this.x < - this.width) this.x = 0;
-        else this.x -= this.game.speed * this.speedModifier;
+        if (this.x < - this.width) {this.x = 0;
+        } else this.x -= this.game.speed * this.speedModifier;
     }
 
 

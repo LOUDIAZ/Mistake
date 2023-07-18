@@ -13,8 +13,8 @@ class Enemy {
         this.y += this.speedY;
         if (this.frameTimer > this.frameIterval) {
             this.frameTimer = 0;
-            if (this.frameX < this.maxFrame) this.frameX++;
-            else this.frameX = 0;
+            if (this.frameX < this.maxFrame) {this.frameX++;
+            }else this.frameX = 0;
         } else {
             this.frameTimer += deltaTime;
         }
@@ -65,5 +65,4 @@ export class GroundEnemy extends Enemy {
         this.speedY = 0;
         this.maxFrame = 15;
     }
-
 }

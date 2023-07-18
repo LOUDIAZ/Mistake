@@ -31,22 +31,22 @@ export class Player {
         this.currentState.handleInput(input);
         // horizontal
         this.x += this.speed;
-        if (input.includes("ArrowRight")) this.speed = this.maxSpeed;
-        else if (input.includes("ArrowLeft")) this.speed = -this.maxSpeed;
-        else this.speed = 0;
+        if (input.includes("ArrowRight")) {this.speed = this.maxSpeed;
+        } else if (input.includes("ArrowLeft")) {this.speed = -this.maxSpeed;
+        } else this.speed = 0;
         if (this.x < 0) this.x = 0;
         if (this.x > this.game.widht - this.width) this.x = this.game.widht - this.width;
 
         //vertical
         this.y += this.vy;
-        if (!this.onGround()) this.vy += this.weight;
-        else this.vy = 0;
+        if (!this.onGround()) {this.vy += this.weight;
+        } else this.vy = 0;
 
         //sprite animation 
         if (this.frameTimer > this.frameInterval) {
             this.frameTimer = 0;
-            if (this.frameX < this.maxFrame) this.frameX++;
-            else this.frameX = 0;
+            if (this.frameX < this.maxFrame) {this.frameX++;
+            } else this.frameX = 0;
         } else {
             this.frameTimer += deltaTime;
         }
