@@ -29,7 +29,7 @@ export class Texto {
         if (this.game.gameOver) {
             if (this.game.score > this.game.winningScore) {
                 Swal.fire({
-                    title: 'Winner',
+                    title: 'Winner!!!',
                     text: "Desea volver a Jugar?",
                     showDenyButton: true,
                     showCancelButton: true,
@@ -39,14 +39,14 @@ export class Texto {
                     denyButtonColor: "#00bbf9",
                     cancelButtonColor: "#ef233c",
                 }).then((result) => {
-
                     if (result.isConfirmed) {
                         location.reload();
                     } else if (result.isDenied) {
-                        Swal.fire("Score: ", localStorage.Score,"Lives:", localStorage.Lives);
+                        Swal.fire({
+                            html: " <b>Score:</b>  "+ localStorage.getItem("Score")+ " <b>Lives:</b>  "+ localStorage.getItem("Lives"),
+                        })
                     }
                 })
-                /*aca es donde etoy teniendo dificultad  Swal.fire("Score: ", localStorage.Score, "Lives:", localStorage.Lives) no aparece en la alerta. otra solución podria ser hacer un HTML más completo de Score. Pero como la consigna es agregar librería lo hice así, aunque no me gusta */
             } else {
                 Swal.fire({
                     title: 'Más Suerte la Próxima!',
@@ -62,7 +62,9 @@ export class Texto {
                     if (result.isConfirmed) {
                         location.reload();
                     } else if (result.isDenied) {
-                        Swal.fire("Score: ", localStorage.Score,"Lives:", localStorage.Lives);
+                        Swal.fire({
+                            html: " <b>Score:</b>  "+ localStorage.getItem("Score")+ " <b>Lives:</b>  "+ localStorage.getItem("Lives"),
+                        })
                     }
                 })
             }
